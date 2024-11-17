@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Kittens Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Two cute kittens" class="w-full h-auto">
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                <button class="bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-800 rounded-full p-2 transition duration-300">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-800 rounded-full p-2 transition duration-300">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-800 rounded-full p-2 transition duration-300">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+        <div class="p-4">
+            <h2 class="text-xl font-semibold mb-2">Adorable Kittens</h2>
+            <p class="text-gray-600">Watch these cute kittens play and nap. Use the controls to navigate through different kitten moments!</p>
+        </div>
+    </div>
+
+    <script>
+        const playButton = document.querySelector('.fa-play');
+        let isPlaying = false;
+
+        playButton.addEventListener('click', () => {
+            if (isPlaying) {
+                playButton.classList.remove('fa-pause');
+                playButton.classList.add('fa-play');
+            } else {
+                playButton.classList.remove('fa-play');
+                playButton.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
